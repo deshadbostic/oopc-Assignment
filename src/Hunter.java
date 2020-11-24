@@ -1,6 +1,7 @@
-
-public class Hunter extends GamePiece implements ControlActions
+import java.util.*;
+public class Hunter extends GamePiece implements ControlActions, EatingActions
 {
+    Scanner input = new Scanner(System.in);
     private int energylevel;//holds hunter energy
     private char hname; //holds hunter symbol
     private int timesNotEaten;
@@ -28,14 +29,70 @@ public class Hunter extends GamePiece implements ControlActions
     {
         return hname;
     }//getHname
-    public int findNewPos(int direction)
+    public int [] findNewPos(int direction)
     {
-        return 0;
+  int row;
+        int col;
+        int [] newPos = new int [2];
+        direction = input.nextInt();
+        if(direction == 1)
+        {
+            System.out.println("You chose to go north");
+            row = rowPos - 1;
+            newPos[0] = row;
+            return newPos;
+        }
+        else if(direction == 2)
+        {
+            System.out.println("You chose to go south");
+            row = rowPos + 1;
+            newPos[0] = row;
+            return newPos;
+        }
+        else if (direction == 3)
+        {
+            System.out.println("You chose to go east");
+            col = colPos + 1;
+            
+            
+        }
+        else if (direction == 4)
+        {
+            System.out.println("You chose to go west");
+            col = colPos - 1;
+           
+        }
+        else if (direction == 5)
+        {
+            System.out.println("You chose to go north-west");
+            row = rowPos - 1;
+            col = colPos - 1;
+            
+        }
+        else if (direction == 6)
+        {
+            System.out.println("You chose to go south-west");
+            row = rowPos + 1;
+            col = colPos - 1;
+            
+        }
+        else if (direction == 7)
+        {
+            System.out.println("You chose to go sotuh-east");
+            row = rowPos + 1;
+            col = colPos + 1;
+            
+        }
+        else if (direction == 8)
+        {
+            System.out.println("You chose to go north-east");
+            row = rowPos - 1;
+            col = colPos + 1;
+            
+        }
+        return newPos;
     }
-    public boolean checkNewPos(int row,int col)
-    {
-        return true;
-    }
+
     public void moveToNewPos(int direction)
     {
         
@@ -47,5 +104,21 @@ public class Hunter extends GamePiece implements ControlActions
     public int getTimesNotEaten()
     {
         return timesNotEaten;
+    }
+    public void eatNorth()
+    {
+    
+    }
+    public void eatSouth()
+    {
+    
+    }
+    public void eatEast()
+    {
+    
+    }
+    public void eatWest()
+    {
+    
     }
 }

@@ -8,6 +8,14 @@
  *
  * @author Jaddison
  */
-public class GluttoneyException extends Exception{
-    
+public class GluttoneyException extends Exception
+{
+    public GluttoneyException()
+    {
+        super();
+    }//GluttoneyException
+    public String Output()
+    {
+        return("Death by gluttoney!");
+    }
 }
