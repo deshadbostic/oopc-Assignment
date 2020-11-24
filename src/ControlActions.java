@@ -1,6 +1,5 @@
 
 public interface ControlActions {
-    public int findNewPos(int direction);
-    public boolean checkNewPos(int row,int col);
+    public int[] findNewPos(int direction);
     public void moveToNewPos(int direction);
 }

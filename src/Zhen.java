@@ -51,7 +51,8 @@ public class Zhen extends GamePiece implements ControlActions
             row = row + 1;
             
         }
-        return [row,col];
+        int a[]=new int[2];
+        return a;
     }
 
     public void moveToNewPos(int direction)
