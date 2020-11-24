@@ -285,5 +285,56 @@ public class GameGrid
         System.out.println("Hunter " + Hsymbol2.getHname() + " energy: " + Hsymbol2.getEnerygLevel());
         System.out.println("Number of Zhens are: " + numzhen);
     }//displayGrid()
-
+  public void displayMovementOptions(int player)
+  {
+      System.out.println("Please select what type of Move you would like to play \n");
+      if(player == 1)
+      {
+            System.out.println("potential moces are west or right");
+      }//hunter
+      if(player == 2)
+      {
+          System.out.println("potential moces are west or right");
+      }//zhen
+     if(player!=1 && player!=2){
+         System.out.println("Error not valid");
+     }
+  }//displayMovementOptions
+  boolean validateMove(int row, int col)
+  {
+      // not included  findNewPos( 23);
+           if(!(row>numRows || col >numRows))
+           {
+                if(grid[row][col].getSymbol() == '?')
+      {
+          return true;
+      }else
+      {
+             //crowding exception       
+      }
+           }else{
+               //edge exception
+           }
+     
+      return false;
+  }//validateMove
+  boolean isZhenPosition(int rowPos, int colPos)
+  {
+       if(grid[rowPos][colPos].getSymbol() == 'z')
+      {
+          return true;
+      }
+    return false;  
+  }//isZhenPosition
+  boolean removePiece(int rowPos, int colPos)
+  {
+         if(grid[rowPos][colPos].getSymbol() == 'z')
+      {
+          //grid=new GamePiece[numRows][numCols];
+             grid[rowPos][colPos] = new GamePiece();
+          return true;
+      }
+      
+    return false;  
+  }//removePiece
 }//GameGrid class
