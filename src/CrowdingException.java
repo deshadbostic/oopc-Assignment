@@ -8,6 +8,14 @@
  *
  * @author Jaddison
  */
-public class CrowdingException extends Exception {
-    
+public class CrowdingException extends Exception 
+{
+    public CrowdingException()
+    {
+        super();
+    }
+    public String Output()
+    {
+        return("Stop Crowding");
+    }
 }
