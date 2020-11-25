@@ -290,11 +290,11 @@ public class GameGrid
       System.out.println("Please select what type of Move you would like to play \n");
       if(player == 1)
       {
-            System.out.println("potential moces are west or right");
+            System.out.println("potential moves are : 1 (north), 2 (south), 3 (east), 4(west), 5 (north-west), 6 (south-west), 7 (south-east), 8 (north-east), 9 (eat north), 10(eat west), 11 (eat south), 12 (eat east)");
       }//hunter
       if(player == 2)
       {
-          System.out.println("potential moces are west or right");
+          System.out.println("potential moves are: 1 (north), 2 (south), 3 (east), 4(west), 5 (north-west), 6 (south-west), 7 (south-east), 8 (north-east)");
       }//zhen
      if(player!=1 && player!=2){
          System.out.println("Error not valid");
@@ -318,6 +318,8 @@ public class GameGrid
      
       return false;
   }//validateMove
+  
+  
   boolean isZhenPosition(int rowPos, int colPos)
   {
        if(grid[rowPos][colPos].getSymbol() == 'z')
@@ -326,15 +328,43 @@ public class GameGrid
       }
     return false;  
   }//isZhenPosition
+  
   boolean removePiece(int rowPos, int colPos)
   {
          if(grid[rowPos][colPos].getSymbol() == 'z')
       {
           //grid=new GamePiece[numRows][numCols];
              grid[rowPos][colPos] = new GamePiece();
+             numzhen--;
           return true;
       }
       
     return false;  
   }//removePiece
+  
+  void movepiece(int row,int col)
+  {
+      grid[rowPos][colPos]
+  }
+  boolean endgame(){
+      if(grid[hunter1Coord[0],hunter1Coord[0]+1])
+      {
+          return true;
+      }
+       if(gridHsymbol1.findNewPos(1)[0])
+      {
+          return true;
+      }
+      if(numzhen<=6)
+      {
+          System.out.println("Congrats Hunters have won!!!!!1");
+         return true;
+      }
+      return false;
+  }//endgame
+  
+  GamePiece getpiece(int rowpo,int colpo){
+      return grid[rowpo][colpo];
+  }
+  
 }//GameGrid class

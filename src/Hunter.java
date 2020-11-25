@@ -28,74 +28,119 @@ public class Hunter extends GamePiece implements ControlActions, EatingActions
     public char getHname()
     {
         return hname;
-    }//getHname
+    }//getwHname
     public int [] findNewPos(int direction)
     {
-  int row;
-        int col;
         int [] newPos = new int [2];
-        direction = input.nextInt();
-        if(direction == 1)
+        int row=rowPos;
+       int col=colPos;
+         if(direction == 1)
         {
-            System.out.println("You chose to go north");
-            row = rowPos - 1;
-            newPos[0] = row;
-            return newPos;
+            row = row - 1;
         }
         else if(direction == 2)
         {
-            System.out.println("You chose to go south");
-            row = rowPos + 1;
-            newPos[0] = row;
-            return newPos;
+            row = row + 1;
         }
         else if (direction == 3)
         {
-            System.out.println("You chose to go east");
-            col = colPos + 1;
-            
-            
+            col = col + 1;
         }
         else if (direction == 4)
         {
-            System.out.println("You chose to go west");
-            col = colPos - 1;
-           
+            col = col - 1;
         }
         else if (direction == 5)
         {
-            System.out.println("You chose to go north-west");
-            row = rowPos - 1;
-            col = colPos - 1;
+            col = col - 1;
+            row = row - 1;
             
         }
         else if (direction == 6)
         {
-            System.out.println("You chose to go south-west");
-            row = rowPos + 1;
-            col = colPos - 1;
+            col = col - 1;
+            row = row + 1;
             
         }
         else if (direction == 7)
         {
-            System.out.println("You chose to go sotuh-east");
-            row = rowPos + 1;
-            col = colPos + 1;
+            col = col + 1;
+            row = row + 1;
             
         }
         else if (direction == 8)
         {
-            System.out.println("You chose to go north-east");
-            row = rowPos - 1;
-            col = colPos + 1;
+            col = col + 1;
+            row = row - 1;
             
         }
+        else if (direction == 9)
+        {
+           //special
+            
+        }
+         else if (direction == 10)
+        {
+           //special
+            
+        }
+         else if (direction == 11)
+        {
+          //special
+            
+        }
+         else if (direction == 12)
+        {
+          //special
+            
+        }
+         newPos[0]=row;
+        newPos[1]=col;
         return newPos;
     }
 
     public void moveToNewPos(int direction)
     {
-        
+         if(direction == 1)
+        {
+            rowPos = rowPos - 1;
+        }
+        else if(direction == 2)
+        {
+            rowPos = rowPos + 1;
+        }
+        else if (direction == 3)
+        {
+            colPos = colPos + 1;
+        }
+        else if (direction == 4)
+        {
+            colPos = colPos - 1;
+        }
+        else if (direction == 5)
+        {
+            colPos = colPos - 1;
+            rowPos = rowPos - 1;
+            
+        }
+        else if (direction == 6)
+        {
+            colPos = colPos - 1;
+            rowPos = rowPos + 1;
+            
+        }
+        else if (direction == 7)
+        {
+            colPos = colPos + 1;
+            rowPos = rowPos + 1;
+            
+        }
+        else if (direction == 8)
+        {
+            colPos = colPos + 1;
+            rowPos = rowPos - 1;
+             
+        }
     }
     public void setTimesNotEaten(int notEaten)
     {

@@ -13,11 +13,11 @@ public class Zhen extends GamePiece implements ControlActions
        int col=colPos;
         if(direction == 1)
         {
-            row = row + 1;
+            row = row - 1;
         }
         else if(direction == 2)
         {
-            row = row - 1;
+            row = row + 1;
         }
         else if (direction == 3)
         {
@@ -30,40 +30,42 @@ public class Zhen extends GamePiece implements ControlActions
         else if (direction == 5)
         {
             col = col - 1;
-            row = row + 1;
+            row = row - 1;
             
         }
         else if (direction == 6)
         {
             col = col - 1;
-            row = row - 1;
+            row = row + 1;
             
         }
         else if (direction == 7)
         {
             col = col + 1;
-            row = row - 1;
+            row = row + 1;
             
         }
         else if (direction == 8)
         {
             col = col + 1;
-            row = row + 1;
+            row = row - 1;
             
         }
         int a[]=new int[2];
+        a[0]=row;
+        a[1]=col;
         return a;
     }
 
     public void moveToNewPos(int direction)
     {
-        if(direction == 1)
+      if(direction == 1)
         {
-            rowPos = rowPos + 1;
+            rowPos = rowPos - 1;
         }
         else if(direction == 2)
         {
-            rowPos = rowPos - 1;
+            rowPos = rowPos + 1;
         }
         else if (direction == 3)
         {
@@ -76,25 +78,25 @@ public class Zhen extends GamePiece implements ControlActions
         else if (direction == 5)
         {
             colPos = colPos - 1;
-            rowPos = rowPos + 1;
+            rowPos = rowPos - 1;
             
         }
         else if (direction == 6)
         {
             colPos = colPos - 1;
-            rowPos = rowPos - 1;
+            rowPos = rowPos + 1;
             
         }
         else if (direction == 7)
         {
             colPos = colPos + 1;
-            rowPos = rowPos - 1;
+            rowPos = rowPos + 1;
             
         }
         else if (direction == 8)
         {
             colPos = colPos + 1;
-            rowPos = rowPos + 1;
+            rowPos = rowPos - 1;
             
         }
         
